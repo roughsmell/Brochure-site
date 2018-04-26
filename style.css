@@ -1,0 +1,694 @@
+/*
+Theme name: La Pizzeria
+Theme URL:
+Author: Anuar Ditucalan
+Author URL:
+Description: Theme for restaurant
+Version:1.0
+License:GNU Genral Public License v2 or later
+license URI:http://www.gnu.org/licenses/glp-2.0.html
+Tags: restaurant, mobile first, responsive, pizza
+text Domain: lapizzeria
+
+
+*/
+
+/*box sizing para maging sakto yung size ng mga div pag naglagay ng width or height*/
+html{
+	box-sizing:border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+*,*:before, *:after{
+	box-sizing:inherit;
+} 
+/*to remove white space*/
+body{
+
+	margin:0;
+}
+
+h1{
+	font-sze:48px;
+}
+h2{
+	font-size:40px;
+}
+h3{
+	font-size:28px;
+}
+h4{
+	font-size:24px;
+}
+
+primary-text{ 
+color:#a61206;
+ }
+/*parang clearfix*/
+.clear,
+.clear::after{
+	content:'';
+	clear:both;
+	display:block;
+}
+/*width and margin para magitna ang size ng container*/
+.container{
+	max-width:1100px;
+	width:100%;
+	margin:0 auto;
+
+}
+.sr-text,.screen-reader-text{
+	display:none;
+}
+
+/*header*/
+
+header.site-header{
+	border-bottom:1px solid #c1c1c1;
+	padding-bottom: 30px;
+}
+div.logo{
+	text-align:center;
+}
+
+@media only screen and (min-width:768px){
+	div.logo{
+		text-align:left;
+	}
+}
+@media only screen and (min-width:992px){
+	div.logo{
+		text-align:center;
+	}
+}
+
+img.logo-image{
+	width:250px;
+}
+
+@media only screen and (min-width:768px){
+header.site-header .container{
+	position:relative;
+}
+header.site-header .header-information{
+	position:absolute;
+	top:0;
+	right:0;
+}
+}
+div.address{
+	display:block;
+	clear:both;
+	padding-top:10px;
+
+}
+div.address p{
+	margin:0;
+	font-size:14px;
+	text-align:center;
+}
+
+@media only screen and (min-width:768px){
+div.address p{
+text-align:right;
+}}
+/** social menu **/
+/** nasa nav.social ul header.php **/
+nav.socials ul{
+	list-style:none;
+	text-align:center;
+	padding:0;
+}
+
+@media only screen and (min-width:768px){
+nav.socials ul{
+	float:right;
+
+	}
+
+}
+nav.socials ul li{
+	position:relative;
+	display:inline-block;
+
+	}
+/*papalabasin at lalagyan ng style ang social menu*/
+/*webkit smoothing to look better*/
+/* content:'\f08e' placeholder ng icon at unicode ng sample icon*/
+nav.socials ul li a:before{
+font-family:'fontawesome';
+display:inline-block;
+vertical-align:top;
+
+padding:0.5px;
+content:'\f08e';
+font-size:30px;
+color:#000000;
+-webkit-font-smoothing:antialiazed;
+}
+/*href*= para hanapin nya yung url na paglalagyan ng logo*/
+nav.socials li a[href*="facebook.com"]::before{
+   content:'\f09a';
+}
+nav.socials li a[href*="twitter.com"]::before{
+   content:'\f081';
+}
+nav.socials li a[href*="linkin.com"]::before{
+   content:'\f08c';
+}
+nav.socials li a[href*="instagram.com"]::before{
+   content:'\f16d';
+}
+nav.socials li a[href*="instagram.com"]::before{
+   content:'\f167';
+}
+/*main menu*/
+/*para nakahide yung menu pag nakamobile gagana pag pinindot yung menu sa javascript papalabasin*/
+nav.site-nav {
+display:block;
+}
+
+/* to get the full width*/
+nav.site-nav ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+	width:100%;
+	display:table;
+}
+/*para kung lalagyan ng button sa gilid magsama sa iisang line yung button at menu*/
+.main-menu{
+display:flex;
+}
+@media only screen and (min-width:768px){
+	/* to make center*/
+	nav.site-nav ul li {
+	display:table-cell;
+	width:1%;
+	}
+}
+
+nav.site-nav ul li a{
+	text-align:center;
+	padding:20px 0;
+	display:block;
+	font-weight:bold;
+	text-decoration:none;
+	text-transform:uppercase;
+	color:#000000;
+	font-family: arial,helvetica;
+}
+/* to add line in bottom in current page*/
+nav.site-nav ul li.current_page_item a, 
+.single-specialties nav.site-nav ul li.menu-item-27 a,
+nav.site-nav ul li.current_page_parent a{ 
+	border-bottom:8px solid #a61206;
+}
+/* Responsive Menu buttom */
+@media only screen and (max-width:767px){
+		.mobile-menu a.mobile:hover{
+	text-decoration: none !important;
+color:white !important;
+}
+		.mobile-menu a{
+			height:40px;
+			
+			line-height:40px;
+			background-color:#a61206;
+			width:100%;
+			display:block;
+			color:white ;
+			text-align:center;
+			text-decoration:none ;
+			font-size:20px;
+			text-transform:uppercase;
+			font-family:arial,helvetica;
+		}
+		
+}
+@media only screen and (min-width:768px){
+.mobile-menu a{
+	display:none;
+	}}
+	/*hero image*/
+.hero{
+	background-repeat:no-repeat;
+	background-size:cover;
+	/*para makuha yung buong picture*/
+	background-position:center center;
+	height:450px;
+/*to center the text other technique*/
+	display:table;
+	width:100%;
+	margin:0 auto;
+	text-align:center;
+position:relative;
+}
+/*pang overlay ipapatanong yung csss atpalaging may content:''*/
+.hero::after{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-color:rgba(0,0,0,.5);
+}
+.hero .hero-content{
+	/*table-cell para mafocus center yung text */
+	display:table-cell;
+	vertical-align:middle;
+	color:white;
+/*	para mapunta sa harap yung text at d matabunan ng overlay*/
+z-index:2;
+position:relative;
+}
+
+@media only screen and (min-width:768px){
+	.hero-text{
+width:80%;
+margin:0 auto;
+	}
+}
+
+@media only screen and (min-width:992px){
+	/*yung kakainin nyang space hindi full width*/
+	
+	.hero-text{
+		width:60%);
+	}
+}
+.main-content{
+	padding:60px;
+	background-color:#ffffff;
+	position:relative;
+}
+/*para tumaas sa yung div ng content*/
+@media only screen and (min-width:768px){
+	.main-content{
+		margin-top: -90px;
+	}
+}
+.content-text p{
+	font-size:18px;
+	line-height:30pxs;
+}
+/*main content*/
+
+/*about us -boxes*/
+.box-information .single-box{
+	/*for mobile the width size ng laman or yung picture buong size ng cp*/
+	text-align:center;
+	width:100%;
+	color: #fff;
+}
+
+.box-information .single-box img{
+/*for mobile version*/
+width:100%;
+
+}
+/*for mobile smaller version*/
+@media only screen and (min-width:480px){
+.box-information .single-box{
+width:50%;
+float:left;
+
+}
+/*para walang laktaw hindi kasi nagiging magkadikit yung image at description nung huli*/
+.box-information .single-box:last-child{
+width:100%;
+/*para walang lagpas na kulay*/
+display: block;
+
+}
+
+}
+/*for tablet*/
+@media only screen and (min-width:768px){
+	/*masyadong malaki ang mga image kase nakapagmobile so paliliitin*/
+/*para same size sila lahat*/
+.box-information .single-box,
+.box-information .single-box:last-child{
+width:33.3%;
+}
+}/*kada singlebox iniiba kulay*/
+.box-information .single-box:nth-child(1){
+	background-color:#f19f30;
+}
+.box-information .single-box:nth-child(2){
+	background-color:#127427;
+}
+.box-information .single-box:nth-child(3){
+	background-color:#a61206;
+}
+
+.single-box .content-box{
+	padding:10px;
+	vertical-align: middle;
+	display:table-cell;
+}
+/*footer*/
+footer{
+	margin-top:30px;
+	padding-top:30px;
+	text-align:center;
+	border-top: 1px solid #c1c1c1;
+}
+footer nav ul{
+	list-style: none;
+
+}
+footer nav ul li{
+	display:inline;
+}
+footer nav ul li:last-child .separator{
+display:none;
+}	
+footer nav ul li a{
+color:#000000;
+text-transform:uppercase;
+font-size:16px;
+text-decoration:none;
+}
+footer .location{
+	margin-top:30px;
+}
+footer p {
+	margin : 0 0 5px 0;
+	font-size: 14px;
+}
+footer p.copyright{
+	margin-top:20px;
+}  
+/**GRID **/
+/*para maging responsive at malimitihan yung size at para maging responsive ang image at para sa mobile*/
+/*para hindi din mastretch need nag height auto*/
+img{
+	max-width: 100%;
+	height:auto;
+	}
+@media only screen and (min-width:768px){
+	.container-grid{
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+	/*clearfix para pag nakafloat ang object*/
+	.container-grid::after{
+		content:'';
+		display:block;
+		clear:both;
+	}
+	/*lahat ng class ng magsstart sa word nacolumn*/
+	[class*='column']{
+		/*padding left and right 10px*/
+		padding:0 10px;
+		/*para umangat at tumabi sa 1st pic kailangan may clearfix*/
+		float:left;
+	}
+	/*50% sa left 50% sa right*/
+	.column2-4{
+		width:50%;
+
+	}
+		.column1-4{
+		width:25%;
+
+	}
+		.column3-4{
+		width:75%;
+
+	}
+		.column1-3{
+		width:33.3%;
+
+	}
+		.column2-3{
+		width:66.6%;
+
+	}
+
+}
+/*para sa medjo maliit humihiwalay kase yung dulo*/
+@media only screen and (min-width:480px){
+.container-grid .last:nth-child(3){
+content:'';
+display:block;
+clear:both;
+}
+
+}
+/*specialties*/
+
+/*main div*/
+.our-specialties{
+	padding:0 60px;
+}
+.specialty-content{
+	padding:20px;
+}
+.specialty-content h4{
+	 border-bottom: 1px solid #dfdfdd;
+	 padding: 15px 0;
+	 font-weight:700;
+	 text-transform:uppercase;
+	 margin:0;
+}
+.specialty-content  a{
+	text-decoration:none;
+color:#000000;
+}
+.specialty-content  a:hover{
+	text-decoration:none;
+color:green;
+}
+.specialty-content h4 span{
+	float:right;
+	font:30px;
+	color:#f19f30;
+	font-family:'Open Sans', Sans-serif;
+}
+.specialty-content p{
+color:#3d3d3d;
+}
+
+/*single specialty template*/
+.single-specialties p.ingridients,
+.single-specialties p.price{
+color:#a61206;
+font-size:30px;
+margin:0;
+}
+.single-specialties p.price span{
+	color:#000;
+
+}
+/*blog*/
+article.entry{
+	margin-top:30px;
+}
+header.entry-header{
+	margin-top:20px;
+}
+/*float left para dumikit sa gilid pero dapat yung main div naka clearfix*/
+header.entry-header .date,
+.entry-information .date{
+	background-color:#f19f30;
+	float:left;
+	width:70px;
+	height:70px;
+	text-align:center;
+	padding-top:5px;
+	margin-right:20px;
+
+}
+
+header.entry-header .date time,
+.entry-information .date time {
+	font-size:30px;
+	font-weight:700;
+	
+}
+header.entry-header .date time span,
+.entry-information .date time span{
+	font-size:15px;
+	display:block;
+	line-height:5px;
+	text-transfrom:uppercase;
+}
+
+header.entry-header .entry-title{
+	float:right;
+	
+	width:calc(100% - 90px);
+	background-color:red;
+}
+
+header.entry-header h2{
+	margin:0;
+	font-size:24px;
+	font-weight:700;
+	text-transform:uppercase;
+}
+
+header.entry-header p.author,
+.entry-information p.author{
+	text-transform:uppercase;
+	color:#000;
+	margin-top:10px;
+}
+.entry-information p.author{
+	display:inline;
+	float:left;
+	margin-top:40px;
+}
+.entry-information{
+	padding-top:30px;
+}
+header.entry-header p.author i,
+.entry-information p.author i{
+	font-size:30px;
+color:#f19f30;
+}
+div.entry-content p{
+	margin-bottom:0px;
+	line-height:24px;
+} 
+.entry-content .margin{
+	margin-bottom:10px;
+}
+/*sidebar*/
+
+aside.sidebar{
+	margin-top:3px;
+}
+form.searchform{
+	position:relative;
+}
+form.searchform #searchsubmit{
+	position:absolute;
+	top:0;
+	right:0;
+	width:42px;
+	height:42px;
+	background-color: #a61206;
+	/*para mawala yung text na search*/
+	text-indent: -9999px;
+	background-image: url(img/search.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	border:none;
+	cursor:pointer ;
+}
+form.searchform #s{
+	width:100%;
+	padding:8px;
+}
+.sidebar .widget{
+	margin-bottom:20px;
+}
+
+.sidebar .widget h3{
+font-weight:700 ;
+font-size:24px;
+text-transform:uppercase;
+	}
+
+	.sidebar .widget ul{
+		list-style: none;
+	}
+	.sidebar .widget ul li{
+	margin-botttom:20px;	
+	}
+
+	.sidebar .widget ul li a{
+		color:#000;
+		text-decoration:none; 
+	}
+
+	.sidebar .widget ul li a:hover{
+		color: yellow;
+	}
+
+
+/*single page ginaya lang yung ibang css*/
+
+
+/*Comment */
+div.comments{
+	width:100%;
+}
+.comment-respond h3{
+	font-weight:700;
+	text-align:center;
+}
+@media only screen and (min-width:768px){
+	div.comments{
+		width:80%;
+	}
+}
+@media only screen and (min-width:992px){
+	div.comments{
+		width:60%;
+	}
+}
+.comment-respond  form label{
+	width:200px;
+	display:inline-block;
+	 text-align:right;
+	 padding-right:20px;
+	 font-weight:bold;
+}
+
+.comment-respond form input,
+.comment-respond form textarea{
+	padding:10px;
+	font-size:20px;
+	width:calc(100% - 220px);
+}
+.comment-respond form input[type="submit"]{
+	margin:0 auto;
+	display:block;
+	border:none;
+	width: auto;
+	font-size:20px;
+	text-transform:20px;
+	cursor:pointer;
+}
+p.form-submit{
+	text-align:center;
+}
+}
+.comment-notes{
+	text-align:center;
+}
+/*
+comment list*/
+ol.commentlist{
+	list-style:none;
+}
+ol.commentlist li.comment{
+	background-color:#e1e1e1;
+	padding:28px;
+	margin-bottom:20px;
+}
+ol.commentlist li.comment cite{
+	color:red;
+	font-size:20px;
+	font-weight:bold;
+
+}
+li.comment .comment-author{
+	margin-bottom:10px;
+}
+li.comment a{
+	color:red;
+	text-decoration:none;
+}
+li.comment ul.children{
+	list-style:none;
+}
+li.comment ul.children li{
+	background-color: #fff;
+	margin-top:20px;
+}
