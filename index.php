@@ -66,6 +66,6 @@ $image = wp_get_attachment_Image_src($image,'full');
 			</div>
 		</div>
 
-<div></div>
+
 
 <?php  get_footer(); ?>	
